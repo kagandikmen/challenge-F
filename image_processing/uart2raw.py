@@ -18,10 +18,11 @@ ser = serial.Serial(
 # Opens output.raw in binary write mode
 with open('output.raw', 'wb') as file:
     while True:
-        data = ser.read(4096)	# Number of bytes to be received and saved
+        data = ser.read(ser.in_waiting or 1)	# Number of bytes to be received and saved
 
         if data:
             file.write(data)
+            file.flush()
 
 # For the change in the file to be seen, the program has to be terminated first
 # with Ctrl+C or SIGTERM
