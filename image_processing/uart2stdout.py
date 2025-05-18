@@ -14,6 +14,6 @@ with serial.Serial(PORT, BAUD, timeout=1) as ser:
         while True:
             data = ser.read(ser.in_waiting or 1)
             if data:
-                print(data.decode(errors='replace'), end='')
+                print(data.decode(errors='replace'), end='', flush=True)
     except KeyboardInterrupt:
         print("\nStopped by user.")

@@ -1,4 +1,5 @@
-import serial			
+import serial	
+import os		
 # beforehand run: pip install pyserial
 # BE CAREFUL!!! The package is called "pyserial", not "serial"
 # If you installed serial by mistake, then:
@@ -23,6 +24,7 @@ with open('output.raw', 'wb') as file:
         if data:
             file.write(data)
             file.flush()
+            os.fsync(file.fileno())
 
 # For the change in the file to be seen, the program has to be terminated first
 # with Ctrl+C or SIGTERM
