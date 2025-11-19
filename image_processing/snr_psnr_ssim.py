@@ -1,7 +1,7 @@
 # Python script computing quantitative image regeneration metrics
 # Created:      2025-05-16
-# Modified:     2025-05-18
-# Author:       Kagan Dikmen (kagandikmen@outlook.com)
+# Modified:     2025-11-19
+# Author:       Kagan Dikmen
 
 import argparse
 import numpy as np
